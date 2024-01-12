@@ -1,0 +1,52 @@
+<%- include('layout/header') %>
+
+
+<section>
+    <div class="container">
+        <div class="row ">
+            <div class="col-lg-10 col-md-8 ml-auto">
+                <div class="row align-items-center pt-md-5 mt-md-5 mb-5">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-title text-center mt-3">
+                                <h3>Edit User <%= user.name %></h3>
+                            </div>
+                            <div class="card-body">
+                                <form action="/update/<%= user._id%>" id="add-form" method="post" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label for="productname">Name:</label>
+                                        <input type="text" name="name" class="form-control" id="productname"
+                                            placeholder="Enter Name" value="<%= user.name %>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="productid">Email:</label>
+                                        <input type="email" name="email" class="form-control" id="productid"
+                                            placeholder="Enter Email" value="<%= user.email %>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="productprice">Phone:</label>
+                                        <input type="text" name="phone" class="form-control" id="productprice"
+                                            placeholder="Enter Phone" value="<%= user.phone %>">
+
+                                    </div>
+                                    <label for="image" class="form-lable">Select Image</label>
+                                    <div class="custom-file">
+                                        <input type="file" name="image" class="custom-file-input" id="productimage">
+                                        <div class="invalid-feedback">File Format Not Supported</div>
+                                        <img src="/<%= user.image %>" width="100" class="img-thumbnail" alt="">
+
+                                    </div>
+                                    <input type="hidden" name="old_image" value="<%= user.image %>">
+                                    <button class="btn btn-success mt-5 mx-auto d-block" type="submit">Edit
+                                        User</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('layout/footer') %>
