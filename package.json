@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "app.js"
+    "start": "main.js"
   },
   "author": "",
   "license": "ISC",
